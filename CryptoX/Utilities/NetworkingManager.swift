@@ -24,7 +24,7 @@ class NetworkingManager {
         }
     }
     
-    // By creating a static func we do not need to initialize the class 
+    // By creating a static func we do not need to initialize the class for request
     static func download(request: URLRequest) ->
     AnyPublisher<Data, any Error>
     {
@@ -40,6 +40,18 @@ class NetworkingManager {
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
+    
+    // By creating a static func we do not need to initialize the class for url
+    static func downloadTwo(url: URL) ->
+    AnyPublisher<Data, any Error>
+    {
+       return URLSession.shared.dataTaskPublisher(for: url)
+            .subscribe(on: DispatchQueue.global(qos: .default))
+            .tryMap({ try handleURLResponse(output: $0, url: url) })
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+    
     
     static func handleURLResponse(output: URLSession.DataTaskPublisher.Output, url: URL) throws -> Data {
         guard let response = output.response as? HTTPURLResponse,
