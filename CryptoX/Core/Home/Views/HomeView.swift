@@ -10,7 +10,6 @@ import SwiftUI
 struct HomeView: View {
     
      
-  //  @Environment (HomeViewModel.self) private var vm: HomeViewModel
     @State private var vm: HomeViewModel = HomeViewModel()
     @State private var showPortfolio: Bool = false
     
@@ -21,8 +20,14 @@ struct HomeView: View {
             
             // Content layer
             VStack {
+                //Header
                 homeHeader
                 
+                
+                // Home statistics
+                HomeStatsView(showPortfolio: $showPortfolio)
+                
+                //Search bar
                 SearchBarView(searchText: $vm.searchText)
                 
                 columnTitles
