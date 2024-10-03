@@ -9,32 +9,49 @@ import Foundation
 import Combine
 
 
-@Observable class HomeViewModel {
+@Observable
+class HomeViewModel {
     
 
     
-    var statistics: [StatisticModel] = []
+     var statistics: [StatisticModel] = []
+     //var allCoins: [CoinModel] = []
+     //var portfolioCoins: [CoinModel] = []
+     // var searchText: String = ""
     
     
-     var allCoins: [CoinModel] = []
-     var portfolioCoins: [CoinModel] = []
+    var allCoins: [CoinModel] = [] {
+          didSet {
+              allCoinsSubject.send(allCoins)  // Manually send allCoins changes
+          }
+      }
         
-    var searchText: String = "" {
+      var searchText: String = "" {
            didSet {
                searchTextSubject.send(searchText) // Manually send searchText changes
            }
        }
+    
+    var portfolioCoins: [CoinModel] = [] {
+        didSet {
+            portfolioCoinsSubject.send(portfolioCoins)
+        }
+    }
        
     // Create a PassthroughSubject to act as a Combine publisher for searchText
         private let searchTextSubject = PassthroughSubject<String, Never>()
+        private let allCoinsSubject = PassthroughSubject<[CoinModel], Never>()
+        private let portfolioCoinsSubject = PassthroughSubject<[CoinModel], Never>()
+
         
 
     
     
     private let coinDataService = CoinDataService()
     private let marketDataSerivce = MarketDataService()
-    
+    private let portfolioDataService = PortfolioDataService()
     private var cancellables = Set<AnyCancellable>()
+    
 
     init() {
         addSubscribers()
@@ -43,17 +60,16 @@ import Combine
     func addSubscribers() {
         
         // Does the same subscribing as below so we don't need it
-//        dataService.$allCoins
-//            .sink { [weak self] returnedCoins in
-//                self?.allCoins = returnedCoins
-//            }
-//            .store(in: &cancellables)
+    coinDataService.$allCoins
+            .sink { [weak self] returnedCoins in
+                self?.allCoins = returnedCoins
+            }
+            .store(in: &cancellables)
             
         
-        // Update All Coins
+        // Update All Coins Based on search bar
         searchTextSubject
             .combineLatest(coinDataService.$allCoins)
-        
         // Debounce will wait 0.5 before running the code
             .debounce(for: 0.5, scheduler: DispatchQueue.main)
             .map(filterCoins)
@@ -70,21 +86,43 @@ import Combine
          */
         // Convert MarketDataModel into statistic Model
         marketDataSerivce.$marketData
-        
-        
+            .combineLatest(portfolioCoinsSubject)
             .map(mapGlobalMarketData)
             .sink { [weak self] returnedStats in
                 self?.statistics = returnedStats
             }
             .store(in: &cancellables)
-     
+        
+        
+        /*
+         Update PortfolioCoin Core data
+         */
+        allCoinsSubject
+            .combineLatest(portfolioDataService.$savedEntites)
+            .map {(coinModels, portfolioEntity) -> [CoinModel] in
+                coinModels.compactMap { coin -> CoinModel? in
+                    guard let entity = portfolioEntity.first(where: { $0.coinID == coin.id }) else {
+                        return nil
+                    }
+                    return coin.updateHoldings(amount: entity.amount)
+                }
+            }
+            .sink { [weak self] returnedCoins in
+                self?.portfolioCoins =  returnedCoins
+            }
+            .store(in: &cancellables)
             
+    }
+    
+    
+    func updatePortfolio(coin: CoinModel, amount: Double) {
+        portfolioDataService.updatePortfolio(coin: coin, amount: amount)
     }
     
     
     private func filterCoins(text: String, coins: [CoinModel]) -> [CoinModel] {
            guard !text.isEmpty else {
-               // just the starting original coins - no change
+               // just the starting original coins list - no change
                return coins
            }
            let lowercasedText = text.lowercased()
@@ -97,7 +135,7 @@ import Combine
     }
     
     
-    private func mapGlobalMarketData(marketDataModel: MarketDataModel?) -> [StatisticModel] {
+    private func mapGlobalMarketData(marketDataModel: MarketDataModel?, portfolioCoins: [CoinModel]) -> [StatisticModel] {
         var stats: [StatisticModel] = []
         
         guard let data = marketDataModel else {
