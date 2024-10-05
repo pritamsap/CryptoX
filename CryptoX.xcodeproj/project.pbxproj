@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C39A6282CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C39A6232CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 5.png */; };
+		9C39A6292CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C39A6242CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 3.png */; };
+		9C39A62A2CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C39A6252CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 1.png */; };
+		9C39A62B2CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C39A6262CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 2.png */; };
+		9C39A62C2CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C39A6272CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 4.png */; };
 		9C85425B2C9A4A4B00990FE5 /* CryptoXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85425A2C9A4A4B00990FE5 /* CryptoXApp.swift */; };
 		9C85425D2C9A4A4B00990FE5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85425C2C9A4A4B00990FE5 /* ContentView.swift */; };
 		9C8542692C9A4C7800990FE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C8542682C9A4C7800990FE5 /* Assets.xcassets */; };
@@ -42,6 +47,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C39A6232CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "English [en] | iPhone - 6.7\" Display - 5.png"; sourceTree = "<group>"; };
+		9C39A6242CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "English [en] | iPhone - 6.7\" Display - 3.png"; sourceTree = "<group>"; };
+		9C39A6252CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "English [en] | iPhone - 6.7\" Display - 1.png"; sourceTree = "<group>"; };
+		9C39A6262CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "English [en] | iPhone - 6.7\" Display - 2.png"; sourceTree = "<group>"; };
+		9C39A6272CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "English [en] | iPhone - 6.7\" Display - 4.png"; sourceTree = "<group>"; };
 		9C8542572C9A4A4B00990FE5 /* CryptoX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C85425A2C9A4A4B00990FE5 /* CryptoXApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoXApp.swift; sourceTree = "<group>"; };
 		9C85425C2C9A4A4B00990FE5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,9 +98,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C39A6222CB0B9F2003F6983 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9C39A6252CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 1.png */,
+				9C39A6262CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 2.png */,
+				9C39A6242CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 3.png */,
+				9C39A6272CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 4.png */,
+				9C39A6232CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 5.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		9C85424E2C9A4A4B00990FE5 = {
 			isa = PBXGroup;
 			children = (
+				9C39A6222CB0B9F2003F6983 /* Images */,
 				9C8542592C9A4A4B00990FE5 /* CryptoX */,
 				9C8542582C9A4A4B00990FE5 /* Products */,
 			);
@@ -299,8 +322,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C88D15C2C9C87420036FFEB /* keys.plist in Resources */,
+				9C39A6282CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 5.png in Resources */,
 				9C88D15E2C9C89BC0036FFEB /* .gitignore in Resources */,
+				9C39A62A2CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 1.png in Resources */,
+				9C39A62C2CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 4.png in Resources */,
+				9C39A62B2CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 2.png in Resources */,
 				9C8542692C9A4C7800990FE5 /* Assets.xcassets in Resources */,
+				9C39A6292CB0B9FF003F6983 /* English [en] | iPhone - 6.7" Display - 3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
