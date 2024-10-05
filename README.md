@@ -1,7 +1,7 @@
 **CRYPTOX**
 Preview live market data, and manage user portfoio
 
-![IphoneScreenshots](./images/iphoneImages1.png)  ![IphoneScreenshots](./images/iphoneImages1.png)
-![IphoneScreenshots](./images/iphoneImages1.png)
+![IphoneScreenshots](./Images/iphoneImage1.png)  ![IphoneScreenshots](./Images/iphoneImage2.png)
+![IphoneScreenshots](./Images/iphoneImage3.png)
 
 
