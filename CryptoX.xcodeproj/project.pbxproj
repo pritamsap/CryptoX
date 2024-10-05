@@ -12,6 +12,7 @@
 		9C39A6342CB0BC65003F6983 /* iphoneImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C39A62F2CB0BC64003F6983 /* iphoneImage2.png */; };
 		9C39A6352CB0BC65003F6983 /* iphoneImage3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C39A6302CB0BC64003F6983 /* iphoneImage3.png */; };
 		9C39A6362CB0BC65003F6983 /* iphoneImage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C39A6312CB0BC65003F6983 /* iphoneImage1.png */; };
+		9C39A6382CB0BF96003F6983 /* screenshotImage.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 9C39A6372CB0BF96003F6983 /* screenshotImage.PNG */; };
 		9C85425B2C9A4A4B00990FE5 /* CryptoXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85425A2C9A4A4B00990FE5 /* CryptoXApp.swift */; };
 		9C85425D2C9A4A4B00990FE5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C85425C2C9A4A4B00990FE5 /* ContentView.swift */; };
 		9C8542692C9A4C7800990FE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C8542682C9A4C7800990FE5 /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		9C39A62F2CB0BC64003F6983 /* iphoneImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphoneImage2.png; sourceTree = "<group>"; };
 		9C39A6302CB0BC64003F6983 /* iphoneImage3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphoneImage3.png; sourceTree = "<group>"; };
 		9C39A6312CB0BC65003F6983 /* iphoneImage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphoneImage1.png; sourceTree = "<group>"; };
+		9C39A6372CB0BF96003F6983 /* screenshotImage.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshotImage.PNG; sourceTree = "<group>"; };
 		9C8542572C9A4A4B00990FE5 /* CryptoX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C85425A2C9A4A4B00990FE5 /* CryptoXApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoXApp.swift; sourceTree = "<group>"; };
 		9C85425C2C9A4A4B00990FE5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		9C39A6222CB0B9F2003F6983 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9C39A6372CB0BF96003F6983 /* screenshotImage.PNG */,
 				9C39A6312CB0BC65003F6983 /* iphoneImage1.png */,
 				9C39A62F2CB0BC64003F6983 /* iphoneImage2.png */,
 				9C39A6302CB0BC64003F6983 /* iphoneImage3.png */,
@@ -322,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C39A6352CB0BC65003F6983 /* iphoneImage3.png in Resources */,
+				9C39A6382CB0BF96003F6983 /* screenshotImage.PNG in Resources */,
 				9C88D15C2C9C87420036FFEB /* keys.plist in Resources */,
 				9C39A6362CB0BC65003F6983 /* iphoneImage1.png in Resources */,
 				9C39A6322CB0BC65003F6983 /* iphoneImage4.png in Resources */,
